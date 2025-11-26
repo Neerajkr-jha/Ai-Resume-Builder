@@ -62,7 +62,7 @@ function ExperienceForm({ data, onChange }) {
 
                             <input value={experienc.end_date || ""} onChange={(e)=>updateExperience(index,"end_date",e.target.value)} type="month" disabled={experienc.is_current} className="px-3 py-2 text-sm rounded-lg disabled:bg-gray-100" />
                         </div>
-                        <label>
+                        <label className="flex items-center gap-2">
                             <input type="checkbox" checked={experienc.is_current || false} onChange={(e)=>{updateExperience(index,"is_current",e.target.checked ? true :false);}} className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"/>
                             <span className="text-sm text-gray-700">Currently working here</span>
                         </label>
