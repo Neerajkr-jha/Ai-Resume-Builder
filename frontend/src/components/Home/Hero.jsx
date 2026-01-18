@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 function Hero() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const logos = [
-    "https://saasly.prebuiltui.com/assets/companies-logo/instagram.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/framer.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/microsoft.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/huawei.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/walmart.svg",
+    "/logos/instagram.png",
+    "/logos/Microsoft_logo_(2012).svg",
+    "/logos/Walmart_logo_(2025;_Alt).svg",
+    "/logos/Amazon_2024.svg",
+    "/logos/Infosys_logo.svg.png",
   ];
   return (
     <>
