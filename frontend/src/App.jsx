@@ -1,28 +1,58 @@
- import './App.css'
- import {Route, Routes} from 'react-router-dom'
-import Home from './Pages/Home'
-import Layout from './Pages/Layout'
-import Dashboard from './Pages/Dashboard'
-import ResumeBuilder from './Pages/ResumeBuilder'
-import Preview from './Pages/Preview'
-import Login from './Pages/Login'
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import Layout from "./Pages/Layout";
+import Dashboard from "./Pages/Dashboard";
+import ResumeBuilder from "./Pages/ResumeBuilder";
+import Preview from "./Pages/Preview";
+import Login from "./Pages/Login";
+import { useDispatch } from "react-redux";
+import api from "./configs/api";
+import { login, setLoading } from "./app/features/authSlice";
+import { useEffect } from "react";
+import {Toaster} from 'react-hot-toast'
 
 function App() {
+  const dispatch = useDispatch();
+  const getUserData = async () => {
+    const token = localStorage.getItem("token");
+    try {
+      if (token) {
+        const { data } = await api.get("/api/users/data", {
+          headers: {
+            Authorization: token,
+          },
+        });
+        if (data.user) {
+          dispatch(login({ token, user: data.user }));
+        }
+        dispatch(setLoading(false));
+      }else{
+        dispatch(setLoading(false));
+      }
+    } catch (error) {
+      dispatch(setLoading(false));
+      console.log(error.message);
+    }
+  };
+  useEffect(() => {
+    getUserData()
+  }, []);
 
   return (
     <>
-   <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='app' element={<Layout/>}>
-    <Route index element={<Dashboard/>}/>
-    <Route path='builder/:resumeId' element={<ResumeBuilder/>}/>
-    </Route>
+    <Toaster/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="app" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="builder/:resumeId" element={<ResumeBuilder />} />
+        </Route>
 
-     <Route path='view/:resumeId' element={<Preview/>}/>
-     <Route path='login' element={<Login/>}/>
-   </Routes>
+        <Route path="view/:resumeId" element={<Preview />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
