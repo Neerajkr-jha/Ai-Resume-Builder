@@ -1,5 +1,5 @@
 import User from "../Model/User.js";
-import Resume from "../Model/resume.js";
+import Resume from "../Model/Resume.js"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
