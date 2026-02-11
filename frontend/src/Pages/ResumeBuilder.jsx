@@ -97,15 +97,25 @@ function ResumeBuilder() {
     }
   }
   //sharing resume
-  const handleShare=()=>{
-    const frontendUrl=window.location.href.split('/app/')[0];
-    const resumeUrl=frontendUrl+'/view/'+resumeId;
-    if(navigator.share){
-      navigator.share({url:resumeUrl,text:'My Resume', });
-    }else{
-      alert('Share not suported in this browser')
+ const handleShare = async () => {
+  const resumeUrl = `${window.location.origin}/view/${resumeId}`;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "My Resume",
+        text: "Check out my resume",
+        url: resumeUrl,
+      });
+    } catch (err) {
+      console.log("Share cancelled", err);
     }
+  } else {
+    alert("Share not supported. Copying link...");
+    navigator.clipboard.writeText(resumeUrl);
   }
+};
+
   // download
   const downloadResume=()=>{
     window.print();
