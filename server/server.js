@@ -9,7 +9,7 @@ import aiRouter from "./routes/aiRouter.js";
 
 
 const app=express();
-// const PORT=process.env.PORT || 3000;
+const PORT=process.env.PORT || 3000;
 
 //database connnection 
 // await connectDb()
@@ -38,8 +38,8 @@ app.use("/api/users", userRouter)
 app.use("/api/resumes",resumeRouter)
 app.use("/api/ai",aiRouter)
 
-// app.listen(PORT,()=>{
-//     console.log(`server is running at PORT ${PORT}`);
-// })
+app.listen(PORT,()=>{
+    console.log(`server is running at PORT ${PORT}`);
+})
 
 export default app

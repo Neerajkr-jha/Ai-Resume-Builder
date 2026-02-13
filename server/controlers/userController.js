@@ -2,6 +2,9 @@ import User from "../Model/User.js";
 import Resume from "../Model/Resume.js"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import { oauth2client } from '../utils/googleConfig.js'
+import axios from 'axios'
+import crypto from "crypto";
 
 const generateToken = (userId) => {
     const token = jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '7d' })
@@ -97,5 +100,46 @@ export const getUserResumes = async (req, res) => {
         return res.status(200).json({ resumes });
     } catch (error) {
         return res.status(400).json({ message: error.message })
+    }
+}
+
+//GET:/api/users/login
+export const googleLogin = async (req, res) => {
+    try {
+        const { code } = req.query;
+        const googleRes = await oauth2client.getToken(code);
+        oauth2client.setCredentials(googleRes.tokens);
+
+        const userRes = await axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${googleRes.tokens.access_token}`)
+
+        const { email, name, picture } = userRes.data
+
+        let user = await User.findOne({ email });
+
+        if (!user) {
+            const randomPassword = crypto.randomBytes(32).toString("hex");
+
+            const hashedPassword = await bcrypt.hash(randomPassword, 10);
+            user = await User.create({
+                name, email, image: picture,password: hashedPassword,
+            })
+        }
+        const _id = user._id
+        const token = jwt.sign({ _id, email },
+            process.env.JWT_SECRET, {
+            expiresIn: process.env.JWT_TIMEOUT
+
+        })
+        return res.status(200).json({
+            message: "success",
+            token,
+            user,
+        })
+    } catch (error) {
+        console.error("Google Login Error:", error);
+        return res.status(500).json({
+            message: "Internal Server Error",
+            error: error.message
+        })
     }
 }

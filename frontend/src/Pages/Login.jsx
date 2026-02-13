@@ -4,9 +4,10 @@ import api from "../configs/api";
 import { useDispatch } from "react-redux";
 import { login } from "../app/features/authSlice";
 import toast from "react-hot-toast";
+import { useGoogleLogin } from "@react-oauth/google";
+import { googleAuth } from "../configs/googleAuth";
 
 function Login() {
-
   const dispatch = useDispatch();
   const query = new URLSearchParams(window.location.search);
   const urlState = query.get("state");
@@ -35,6 +36,29 @@ function Login() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const responseGoogle = async (authResult) => {
+    try {
+      if (authResult.code) {
+        const result = await googleAuth(authResult.code);
+
+        const data = result.data;
+        localStorage.setItem("token", data.token);
+        dispatch(login(data));
+
+        toast.success("Google login successful");
+      }
+    } catch (error) {
+      console.error("Google Login Error:", error);
+      toast.error("Google login failed");
+    }
+  };
+
+  const googleLogin = useGoogleLogin({
+    onSuccess: responseGoogle,
+    onError: responseGoogle,
+    flow: "auth-code",
+  });
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <form
@@ -94,6 +118,26 @@ function Login() {
         >
           {state === "login" ? "Login" : "Sign up"}
         </button>
+        <div className="flex items-center my-4">
+          <div className="flex-grow h-px bg-gray-300"></div>
+          <span className="px-3 text-sm text-gray-500">OR</span>
+          <div className="flex-grow h-px bg-gray-300"></div>
+        </div>
+        <button
+          type="button"
+          onClick={googleLogin}
+          className="mt-3 w-full h-11 flex items-center justify-center gap-3 rounded-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition"
+        >
+          <img
+            src="https://developers.google.com/identity/images/g-logo.png"
+            alt="Google"
+            className="w-5 h-5"
+          />
+          <span className="text-sm font-medium">
+            {state === "login" ? "Sign in with Google" : "Sign up with Google"}
+          </span>
+        </button>
+
         <p
           onClick={() =>
             setState((prev) => (prev === "login" ? "register" : "login"))
