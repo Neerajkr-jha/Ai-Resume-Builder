@@ -1,16 +1,17 @@
 import React from "react";
-import {User2Icon,Mail, Lock} from 'lucide-react'
+import { User2Icon, Mail, Lock } from "lucide-react";
 import api from "../configs/api";
 import { useDispatch } from "react-redux";
 import { login } from "../app/features/authSlice";
 import toast from "react-hot-toast";
 
 function Login() {
-  const dispatch=useDispatch();
-  const query=new URLSearchParams(window.location.search);
-  const urlState=query.get('state');
 
-  const [state, setState] = React.useState(urlState ||"login");
+  const dispatch = useDispatch();
+  const query = new URLSearchParams(window.location.search);
+  const urlState = query.get("state");
+
+  const [state, setState] = React.useState(urlState || "login");
 
   const [formData, setFormData] = React.useState({
     name: "",
@@ -21,12 +22,12 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const {data} =await api.post(`/api/users/${state}`,formData)
-      dispatch(login(data))
-      localStorage.setItem('token',data.token)
-      toast.success(data.message)
+      const { data } = await api.post(`/api/users/${state}`, formData);
+      dispatch(login(data));
+      localStorage.setItem("token", data.token);
+      toast.success(data.message);
     } catch (error) {
-      toast(error?.response?.data?.message|| error.message)
+      toast(error?.response?.data?.message || error.message);
     }
   };
 
@@ -46,7 +47,7 @@ function Login() {
         <p className="text-gray-500 text-sm mt-2">Please {state} to continue</p>
         {state !== "login" && (
           <div className="flex items-center mt-6 w-full bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
-            <User2Icon width={16} color="#687288"/>
+            <User2Icon width={16} color="#687288" />
             <input
               type="text"
               name="name"
@@ -59,7 +60,7 @@ function Login() {
           </div>
         )}
         <div className="flex items-center w-full mt-4 bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
-           <Mail size={13} color="#687288"/>
+          <Mail size={13} color="#687288" />
           <input
             type="email"
             name="email"
@@ -71,7 +72,7 @@ function Login() {
           />
         </div>
         <div className="flex items-center mt-4 w-full bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
-          <Lock size={13} color="#687288"/>
+          <Lock size={13} color="#687288" />
           <input
             type="password"
             name="password"
@@ -82,14 +83,14 @@ function Login() {
             required
           />
         </div>
-        <div className="mt-4 text-left text-green-500">
+        <div className="mt-4 text-left text-blue-500">
           <button className="text-sm" type="reset">
             Forget password?
           </button>
         </div>
         <button
           type="submit"
-          className="mt-2 w-full h-11 rounded-full text-white bg-green-500 hover:opacity-90 transition-opacity"
+          className="mt-2 w-full h-11 rounded-full text-white bg-blue-500 hover:opacity-90 transition-opacity"
         >
           {state === "login" ? "Login" : "Sign up"}
         </button>
@@ -102,7 +103,7 @@ function Login() {
           {state === "login"
             ? "Don't have an account?"
             : "Already have an account?"}{" "}
-          <a href="#" className="text-green-500 hover:underline">
+          <a href="#" className="text-blue-500 hover:underline">
             click here
           </a>
         </p>
