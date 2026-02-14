@@ -91,7 +91,13 @@ const ResumeSchema = new mongoose.Schema({
         },
         description:{
             type:String
-        }
+        },
+        live_link:{
+            type:String
+        },
+        github_link:{
+            type:String
+        },
     },
     education:{
         institution:{
