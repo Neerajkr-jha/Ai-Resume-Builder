@@ -134,7 +134,7 @@ function Login() {
             className="w-5 h-5"
           />
           <span className="text-sm font-medium">
-            {state === "login" ? "Sign in with Google" : "Sign up with Google"}
+            {state === "login" ? "Login in with Google" : "Sign up with Google"}
           </span>
         </button>
 

@@ -16,22 +16,31 @@ const PORT=process.env.PORT || 3000;
 
 //middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin:[
+        "https://ai-resume-maker-t46v.vercel.app",
+        "http://localhost:5173"
+    ],
+    credentials:true,
+}))
 
-let isConnected=false;
+// let isConnected=false;
 
-async function connectOnce() {
-    if(!isConnected){
-        await connectDb();
-        isConnected=true
-        console.log("Databse connected")
-    }
-}
+// async function connectOnce() {
+//     if(!isConnected){
+//         await connectDb();
+//         isConnected=true
+//         console.log("Databse connected")
+//     }
+// }
 
-app.use(async(req,res,next)=>{
-    await connectOnce();
-    next();
-})
+await connectDb();
+console.log("Databse connected")
+
+// app.use(async(req,res,next)=>{
+//     await connectOnce();
+//     next();
+// })
 
 app.get("/",(req,res)=>res.send("Server is Live..."));
 app.use("/api/users", userRouter)
