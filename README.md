@@ -1,51 +1,65 @@
-# AI Resume Maker
+# AI Resume Builder
 
-**AI Resume Maker** is a full-stack web application that assists users in creating professional, recruiter-ready resumes using the power of Artificial Intelligence. Enter your information, let the AI help refine it into impactful content, and download your resume in seconds.
+## 📖 About  
+AI Resume Maker is a full-stack web application that helps users generate professional resumes using Artificial Intelligence. The project is divided into two main parts:
 
-Whether you're a student, fresher, or experienced professional, this tool helps you craft resumes that stand out.
+- **frontend** – User interface built with React + Vite  
+- **server** – Backend API built with Node.js and Express with AI integration  
 
-🌐 View the live project: https://ai-resume-maker-t46v.vercel.app/  
-
----
-
-## 🚀 Features
-
-✨ **AI-Assisted Content Generation**  
-Let the AI suggest optimized wording for career objectives, skills, experience descriptions, and more — tailored to the role you're targeting.
-
-📄 **Multiple Templates**  
-Choose from a range of clean, professional resume layouts.
-
-🔁 **Edit & Preview in Real-Time**  
-As you input your details or refine AI suggestions, instantly preview how your resume will look.
-
-📥 **PDF Export**  
-Download your completed resume as a high-quality PDF.
-
-📱 **Responsive UI**  
-Works well on desktop and mobile screens.
+It allows users to enter their details, enhance content using AI, preview resumes, and download them in PDF format.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack  
 
-| Layer | Technology |
-|-------|------------|
-| Frontend | React, Tailwind CSS / Styled Components |
-| Backend | Node.js, Express or similar API server |
-| AI Integration | OpenAI ChatGPT / Gemini API for content generation |
-| PDF Export | pdf-kit / Puppeteer / html2pdf |
-| Database | MongoDB for user & resume storage |
+- **Frontend**: React, Vite, CSS, JavaScript  
+- **Backend**: Node.js, Express.js  
+- **AI Integration**: OpenAI / Gemini API  
+- **PDF Generation**: html2pdf / Puppeteer  
+- **Deployment**: Vercel  
 
 ---
 
-## 📁 Project Structure
-Ai-Resume-maker/
+## 🚀 Features  
+
+- AI-powered resume content generation  
+- Real-time resume preview  
+- Professional resume templates  
+- PDF export functionality  
+- Responsive design  
+- Clean frontend-backend separation  
+
+---
+
+## 📁 Repository Structure  
+
+```text
+/Ai-Resume-maker
 │
-├── frontend/ # React UI
-├── server/ # Backend APIs & AI integration
+├── frontend/                 # React + Vite Frontend
+│   ├── public/               # Static files
+│   ├── src/                  # Source code
+│   ├── .env                  # Environment variables
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── vercel.json
+│   └── vite.config.js
 │
-├── .gitignore
-├── package.json
+├── server/                   # Node.js Backend
+│   ├── Model/                # Database models
+│   ├── configs/              # Configuration files
+│   ├── controlers/           # API controllers
+│   ├── middleware/           # Middleware functions
+│   ├── routes/               # API routes
+│   ├── utils/                # Utility functions
+│   ├── node_modules/
+│   ├── .gitignore
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js             # Backend entry point
+│
 ├── README.md
-└── (other config files)
+└── .gitignore
