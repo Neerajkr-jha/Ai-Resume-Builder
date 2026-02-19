@@ -43,3 +43,10 @@ Works well on desktop and mobile screens.
 ---
 
 ## 📁 Project Structure
+Ai-Resume-maker/
+├── frontend/ # React UI
+├── server/ # Backend APIs & AI integration
+├── .gitignore
+├── package.json
+├── README.md
+└── (other config files)
