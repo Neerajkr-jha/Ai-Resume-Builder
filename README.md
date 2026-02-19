@@ -22,9 +22,6 @@ As you input your details or refine AI suggestions, instantly preview how your r
 📥 **PDF Export**  
 Download your completed resume as a high-quality PDF.
 
-🔒 **(Optional) User Accounts**  
-Save multiple versions and manage your profile (if implemented).
-
 📱 **Responsive UI**  
 Works well on desktop and mobile screens.
 
@@ -38,14 +35,16 @@ Works well on desktop and mobile screens.
 | Backend | Node.js, Express or similar API server |
 | AI Integration | OpenAI ChatGPT / Gemini API for content generation |
 | PDF Export | pdf-kit / Puppeteer / html2pdf |
-| Database | (Optional) MongoDB / PostgreSQL for user & resume storage |
+| Database | MongoDB for user & resume storage |
 
 ---
 
 ## 📁 Project Structure
 Ai-Resume-maker/
+│
 ├── frontend/ # React UI
 ├── server/ # Backend APIs & AI integration
+│
 ├── .gitignore
 ├── package.json
 ├── README.md
