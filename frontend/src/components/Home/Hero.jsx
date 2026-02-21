@@ -180,7 +180,7 @@ function Hero() {
           {/* CTA Buttons */}
           <div className="flex items-center gap-5">
             <Link
-              to="/app"
+              to="/app?state=register"
               className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-9 gap-4 h-12 m-1 ring-offset-2 ring-1 ring-blue-400 flex items-center transition-colors"
             >
               Get started
