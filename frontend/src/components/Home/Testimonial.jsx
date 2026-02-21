@@ -10,6 +10,8 @@ function Testimonial() {
       name: "Briar Martin",
       handle: "@neilstellar",
       date: "April 20, 2025",
+      review:
+        "This resume builder helped me create a professional CV in minutes. I started getting interview calls within a week!",
     },
     {
       image:
@@ -17,6 +19,8 @@ function Testimonial() {
       name: "Avery Johnson",
       handle: "@averywrites",
       date: "May 10, 2025",
+      review:
+        "The ATS-friendly templates made a huge difference. My resume finally looks clean and modern.",
     },
     {
       image:
@@ -24,13 +28,17 @@ function Testimonial() {
       name: "Jordan Lee",
       handle: "@jordantalks",
       date: "June 5, 2025",
+      review:
+        "As a fresher, I was confused about formatting. This tool made everything simple and stress-free.",
     },
     {
       image:
         "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60",
-      name: "Avery Johnson",
-      handle: "@averywrites",
-      date: "May 10, 2025",
+      name: "Taylor Smith",
+      handle: "@taylortech",
+      date: "July 2, 2025",
+      review:
+        "The live preview and instant PDF download feature saved me so much time before interviews.",
     },
   ];
 
@@ -64,9 +72,7 @@ function Testimonial() {
           <span className="text-xs text-slate-500">{card.handle}</span>
         </div>
       </div>
-      <p className="text-sm py-4 text-gray-800">
-        Radiant made undercutting all of our competitors an absolute breeze.
-      </p>
+      <p className="text-sm py-4 text-gray-800">{card.review}</p>
       <div className="flex items-center justify-between text-slate-500 text-xs">
         <div className="flex items-center gap-1">
           <span>Posted on</span>
@@ -129,7 +135,7 @@ function Testimonial() {
         </div>
         <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
       </div>
-       <style>{`
+      <style>{`
             @keyframes marqueeScroll {
                 0% { transform: translateX(0%); }
                 100% { transform: translateX(-50%); }

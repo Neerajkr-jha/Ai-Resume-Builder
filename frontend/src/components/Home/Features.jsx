@@ -49,10 +49,10 @@ function Features() {
               </svg>
               <div className="space-y-2">
                 <h3 className="text-base font-semibold text-slate-700">
-                  Real-Time Analytics
+                  Smart Resume Builder
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  Get instant insights into your finances with live dashboards.
+                  Create professional resumes in minutes with guided sections and real-time previews.
                 </p>
               </div>
             </div>
@@ -76,10 +76,10 @@ function Features() {
               </svg>
               <div className="space-y-2">
                 <h3 className="text-base font-semibold text-slate-700">
-                  Bank-Grade Security
+                  ATS-Friendly Templates
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  End-to-end encryption, 2FA, compliance with GDPR standards.
+                  Optimized layouts to pass Applicant Tracking Systems used by top companies.
                 </p>
               </div>
             </div>
@@ -104,11 +104,10 @@ function Features() {
               </svg>
               <div className="space-y-2">
                 <h3 className="text-base font-semibold text-slate-700">
-                  Customizable Reports
+                  Share & Download Options
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  Export professional, audit-ready financial reports for tax or
-                  internal review.
+                  Download your resume in PDF, share live resume preview.
                 </p>
               </div>
             </div>
