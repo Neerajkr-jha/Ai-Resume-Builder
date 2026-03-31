@@ -174,7 +174,7 @@ function Hero() {
           </h1>
 
           <p className="max-w-md text-center text-base my-7">
-            Create, edit and downloadCreate, edit and downnload professional reumes with AI-Powered Assiatance
+            Create, edit and download professional reumes with AI-Powered Assiatance
           </p>
 
           {/* CTA Buttons */}
