@@ -6,7 +6,7 @@ function Footer() {
       <footer className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-gradient-to-r from-white via-blue-200/60 to-white mt-30">
         <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
           <a href="#">
-          <img src="/logo.svg" alt="logo" className="h-11 w-auto"/>
+            <img src="/logo.svg" alt="logo" className="h-11 w-auto" />
           </a>
           <div>
             <p className="text-slate-950 font-semibold">Product</p>
@@ -17,19 +17,13 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a className="hover:text-blue-600 transition">
-                  Support
-                </a>
+                <a className="hover:text-blue-600 transition">Support</a>
               </li>
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Pricing
-                </a>
+                <a className="hover:text-blue-600 transition">Pricing</a>
               </li>
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Affiliate
-                </a>
+                <a className="hover:text-blue-600 transition">Affiliate</a>
               </li>
             </ul>
           </div>
@@ -37,29 +31,19 @@ function Footer() {
             <p className="text-slate-950 font-semibold">Resources</p>
             <ul className="mt-2 space-y-2">
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Company
-                </a>
+                <a className="hover:text-blue-600 transition">Company</a>
               </li>
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Blogs
-                </a>
+                <a className="hover:text-blue-600 transition">Blogs</a>
               </li>
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Community
-                </a>
+                <a className="hover:text-blue-600 transition">Community</a>
               </li>
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Careers
-                </a>
+                <a className="hover:text-blue-600 transition">Careers</a>
               </li>
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  About
-                </a>
+                <a className="hover:text-blue-600 transition">About</a>
               </li>
             </ul>
           </div>
@@ -67,14 +51,10 @@ function Footer() {
             <p className="text-slate-950 font-semibold">Legal</p>
             <ul className="mt-2 space-y-2">
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Privacy
-                </a>
+                <a className="hover:text-blue-600 transition">Privacy</a>
               </li>
               <li>
-                <a  className="hover:text-blue-600 transition">
-                  Terms
-                </a>
+                <a className="hover:text-blue-600 transition">Terms</a>
               </li>
             </ul>
           </div>
@@ -86,6 +66,7 @@ function Footer() {
           </p>
           <div className="flex items-center gap-4 mt-3">
             <a
+              href="https://github.com/Neerajkr-jha"
               target="_blank"
               rel="noreferrer"
             >
@@ -99,13 +80,10 @@ function Footer() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-dribbble size-5 hover:text-blue-500"
+                className="lucide lucide-github size-5 hover:text-blue-500"
                 aria-hidden="true"
               >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
-                <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
-                <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
+                <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.66-.22.66-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.52 1.05 1.52 1.05.9 1.56 2.36 1.11 2.94.85.09-.66.35-1.11.64-1.36-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.04A9.36 9.36 0 0 1 12 6.8c.85 0 1.7.12 2.5.35 1.9-1.31 2.74-1.04 2.74-1.04.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.75-4.57 5 .36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.16.59.67.48A10.26 10.26 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"></path>
               </svg>
             </a>
             <a
@@ -131,7 +109,11 @@ function Footer() {
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
-            <a href="https://x.com/jha_neeraj29" target="_blank" rel="noreferrer">
+            <a
+              href="https://x.com/jha_neeraj29"
+              target="_blank"
+              rel="noreferrer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -148,11 +130,7 @@ function Footer() {
                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
               </svg>
             </a>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

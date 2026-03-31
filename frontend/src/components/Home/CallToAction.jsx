@@ -13,7 +13,6 @@ function CallToAction() {
         <Link
           to='/app?state=register'
           className="flex items-center gap-2 rounded-3xl py-3 px-8 bg-blue-600 hover:bg-blue-700 transition text-white"
-          hidden={user}
         >
           Get Started
           <svg

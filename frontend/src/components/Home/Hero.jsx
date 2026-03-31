@@ -1,17 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 
 function Hero() {
-  const {user} = useSelector(state=> state.auth)
+  const { user } = useSelector((state) => state.auth);
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const logos = [
-    "/logos/instagram.png",
-    "/logos/Microsoft_logo_(2012).svg",
-    "/logos/Walmart_logo_(2025;_Alt).svg",
-    "/logos/Amazon_2024.svg",
-    "/logos/Infosys_logo.svg.png",
-  ];
   return (
     <>
       <div className="min-h-screen pb-20">
@@ -28,10 +21,7 @@ function Hero() {
             <a href="#features" className="hover:text-blue-600 transition">
               Features
             </a>
-            <a
-              href="#testimonials"
-              className="hover:text-blue-600 transition"
-            >
+            <a href="#testimonials" className="hover:text-blue-600 transition">
               Testimonials
             </a>
             <a href="#cta" className="hover:text-blue-600 transition">
@@ -41,21 +31,25 @@ function Hero() {
 
           <div className="flex gap-2">
             <Link
-              to='/app?state=register'
+              to="/app?state=register"
               className="hidden md:block px-6 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white"
               hidden={user}
             >
               Get started
             </Link>
             <Link
-              to='/app?state=login'
+              to="/app?state=login"
               className="hidden md:block px-6 py-2 border active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900"
               hidden={user}
             >
               Login
             </Link>
-            <Link to='/app' className="hidden md:block px-8 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white"  hidden={!user}>
-            Dashboard
+            <Link
+              to="/app"
+              className="hidden md:block px-8 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white"
+              hidden={!user}
+            >
+              Dashboard
             </Link>
           </div>
 
@@ -174,7 +168,8 @@ function Hero() {
           </h1>
 
           <p className="max-w-md text-center text-base my-7">
-            Create, edit and download professional reumes with AI-Powered Assiatance
+            Create, edit and download professional reumes with AI-Powered
+            Assiatance
           </p>
 
           {/* CTA Buttons */}
@@ -201,24 +196,6 @@ function Hero() {
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
             </Link>
-          </div>
-
-          <p className="py-6 text-slate-600 mt-14">
-            Trusting by leading brands, including
-          </p>
-
-          <div
-            className="flex flex-wrap justify-between max-sm:justify-center gap-6 max-w-3xl w-full mx-auto py-4"
-            id="logo-container"
-          >
-            {logos.map((logo, index) => (
-              <img
-                key={index}
-                src={logo}
-                alt="logo"
-                className="h-6 w-auto max-w-xs"
-              />
-            ))}
           </div>
         </div>
       </div>
