@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {useSelector} from 'react-redux'
 
 function Hero() {
-  const { user } = useSelector((state) => state.auth);
+  const {user} = useSelector(state=> state.auth)
   const [menuOpen, setMenuOpen] = React.useState(false);
+
   return (
     <>
       <div className="min-h-screen pb-20">
@@ -21,7 +22,10 @@ function Hero() {
             <a href="#features" className="hover:text-blue-600 transition">
               Features
             </a>
-            <a href="#testimonials" className="hover:text-blue-600 transition">
+            <a
+              href="#testimonials"
+              className="hover:text-blue-600 transition"
+            >
               Testimonials
             </a>
             <a href="#cta" className="hover:text-blue-600 transition">
@@ -31,25 +35,21 @@ function Hero() {
 
           <div className="flex gap-2">
             <Link
-              to="/app?state=register"
+              to='/app?state=register'
               className="hidden md:block px-6 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white"
               hidden={user}
             >
               Get started
             </Link>
             <Link
-              to="/app?state=login"
+              to='/app?state=login'
               className="hidden md:block px-6 py-2 border active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900"
               hidden={user}
             >
               Login
             </Link>
-            <Link
-              to="/app"
-              className="hidden md:block px-8 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white"
-              hidden={!user}
-            >
-              Dashboard
+            <Link to='/app' className="hidden md:block px-8 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white"  hidden={!user}>
+            Dashboard
             </Link>
           </div>
 
@@ -168,8 +168,7 @@ function Hero() {
           </h1>
 
           <p className="max-w-md text-center text-base my-7">
-            Create, edit and download professional reumes with AI-Powered
-            Assiatance
+            Create, edit and download professional reumes with AI-Powered Assiatance
           </p>
 
           {/* CTA Buttons */}

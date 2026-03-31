@@ -1,28 +1,35 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link ,useNavigate} from "react-router-dom";
-import {logout} from '../app/features/authSlice'
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../app/features/authSlice";
 
 function Navbar() {
-  const {user}=useSelector(state=>state.auth)
-  const dispatch=useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
-  const navigate =useNavigate();
-  const logoutUser=()=>{
-    navigate('/');
-    dispatch(logout())
-  }
+  const navigate = useNavigate();
+  const logoutUser = () => {
+    navigate("/");
+    dispatch(logout());
+  };
   return (
-    <div className="shadow-bg-white">
-      <nav className="flex items-center justify-between max-w-7xl mx-auto px-4 py-3.5 text-slate-800">
-        <Link to='/'>
-          <img src="/logo.svg" alt="logo" className="w-auto h-11" />
-        </Link>
-        <div className="flex items-center gap-4 text-sm">
-            <p className="max-sm:hidden">Hi, {user?.name}</p>
-            <button onClick={logoutUser} className="bg-white hover:bg-blue-100 border border-gray-300 px-7 py-1.5 rounded-full active:scale-95 transition-all">Logout</button>
+    <div className="bg-white p-2">
+      <div className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-xl px-6 py-5 mx-3">
+        <nav className="flex items-center justify-between">
+          <img src="/logo.svg" alt="logo"/>
+          <button
+            onClick={logoutUser}
+            className="bg-white text-black px-5 py-2 rounded-full hover:bg-gray-100 transition"
+          >
+            Logout
+          </button>
+        </nav>
+        <div>
+          <span className="text-white font-medium py-2 text-lg">
+            Hello ,{user?.name}
+          </span>
         </div>
-      </nav>
+      </div>
     </div>
   );
 }

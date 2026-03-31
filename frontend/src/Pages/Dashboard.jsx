@@ -101,20 +101,20 @@ function Dashboard() {
   }, []);
   return (
     <div>
-      <div className="max-w-7xl mx-auto py-4 px-8">
+      <div className=" mx-auto py-4 px-4">
         <p className="text-2xl font-medium mb-6 bg-linear-to-r from slate-600 to slate-700  bg-clip-text text-transparent sm:hidden">
           Welcome, Jhon Doe
         </p>
 
         <div className="flex gap-4">
-          <button onClick={()=>{setShowCreateResume(true)}} className="w-full bg-white sm:max-w-36 h-48 flex flex-col items-center justify-center rounded-1g gap-2 text-slate-600 border border-dashed border-slate-300 group hover:border-indigo-500 hover: shadow-lg transition-all duration-300 cursor-pointer">
+          <button onClick={()=>{setShowCreateResume(true)}} className="w-full bg-white sm:max-w-76 h-35 flex flex-col items-center justify-center rounded-1g gap-2 text-slate-600 border border-dashed border-slate-300 group hover:border-indigo-500 hover: shadow-lg transition-all duration-300 cursor-pointer">
             {/* create resume  */}
             <PlusIcon className="size-11 transition-all duration-200 p-2.5 bg-linear-to-br from indigo-300 to bg-indigo-500 text-white rounded-full" />
             <p className="text-sm group-hover:text-indigo-600 transition-all duration-300">
               Create Resume
             </p>
           </button>
-          <button onClick={()=>{setShowUploadResume(true)}} className="w-full bg-white sm:max-w-36 h-48 flex flex-col items-center justify-center rounded-1g gap-2 text-slate-600 border border-dashed border-slate-300 group hover:border-purple-500 hover: shadow-lg transition-all duration-300 cursor-pointer">
+          <button onClick={()=>{setShowUploadResume(true)}} className="w-full bg-white sm:max-w-76 h-35 flex flex-col items-center justify-center rounded-1g gap-2 text-slate-600 border border-dashed border-slate-300 group hover:border-purple-500 hover: shadow-lg transition-all duration-300 cursor-pointer">
             <UploadIcon className="size-11 transition-all duration-200 p-2.5 bg-linear-to-br from purple-300 to bg-purple-500 text-white rounded-full" />
             <p className="text-sm group-hover:text-purple-600 transition-all duration-300">
               Upload Existing
